@@ -7,6 +7,21 @@
     <title>Timer</title>
 </head>
 <body>
-    
+    <h1 id="text"></h1>
+    <script>
+    let input = parseInt(prompt(''))
+    const text = document.getElementById('text')
+    text.style.color = 'blue'
+    text.innerText = `剩餘 ${input} 秒`
+    let timer = setInterval(() => {
+      input--
+      text.innerText = `剩餘 ${input} 秒`
+      if (input === 0) {
+        text.innerText = '時間到'
+        text.style.color = 'red'
+        clearInterval(timer)
+      }
+    }, 1000)
+    </script>
 </body>
 </html>
